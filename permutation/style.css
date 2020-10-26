@@ -1,0 +1,14 @@
+#title, #Explanation {
+    text-align: center;
+}
+
+#permutation{
+    text-align: center;
+}
+
+.btn {
+    height: 50px;
+    width: 50px;
+    margin-left: -3px;
+    margin-right: -4px;
+}
