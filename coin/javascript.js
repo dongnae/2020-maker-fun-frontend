@@ -21,6 +21,7 @@ let map = `99999999999999999999
 90000000000000000009
 99999999999999999999`;
 
+let isGame = true;
 let getCoin = 0;
 let length = 20;
 let split = map.split("\n");
@@ -36,10 +37,10 @@ function drawMap() {    // 맵 화면에 그리기
     document.querySelector('#screen').innerHTML = "<br><br>";
     for(let i=0 ; i<length ; i++) {
         for(let j=0 ; j<length ; j++) {
-            if(mp[i][j] === '9') document.querySelector('#screen').innerHTML += "<img src = \"wall.png\">";
-            else if(mp[i][j] === '0') document.querySelector('#screen').innerHTML += "<img src = \"space.png\">";
-            else if(mp[i][j] === '1') document.querySelector('#screen').innerHTML += "<img src = \"coin.png\">";
-            else if(mp[i][j] === '5') document.querySelector('#screen').innerHTML += "<img src = \"character.png\">";
+            if(mp[i][j] === '9') document.querySelector('#screen').innerHTML += "<svg id=\"image\" width=\"20px\" height=\"20px\"><rect x=\"0\" y=\"0\" width=\"20\" height=\"20\" fill=\"#000000\"></rect></svg>";
+            else if(mp[i][j] === '0') document.querySelector('#screen').innerHTML += "<svg id=\"image\" width=\"20px\" height=\"20px\"><rect x=\"0\" y=\"0\" width=\"20\" height=\"20\" fill=\"#ffffff\"></rect></svg>";
+            else if(mp[i][j] === '1') document.querySelector('#screen').innerHTML += "<svg id=\"image\" width=\"20px\" height=\"20px\"><rect x=\"0\" y=\"0\" width=\"20\" height=\"20\" fill=\"#ffff00\"></rect></svg>";
+            else if(mp[i][j] === '5') document.querySelector('#screen').innerHTML += "<svg id=\"image\" width=\"20px\" height=\"20px\"><rect x=\"0\" y=\"0\" width=\"20\" height=\"20\" fill=\"#ff0000\"></rect></svg>";
         }
         document.querySelector('#screen').innerHTML += "<br>";
     }
@@ -48,37 +49,37 @@ function drawMap() {    // 맵 화면에 그리기
     `;
 }
 
-document.onkeydown = (e) => {
-    let key = e.key;
-    if(key === "ArrowDown") {
-        if(mp[x+1][y] === '0' || mp[x+1][y] === '1') {
-            if(mp[x+1][y] === "1") getCoin++;
-            mp[x][y] = '0';
-            x++;
-            mp[x][y] = '5';
-            drawMap();
-            console.log("함수실행");
-            console.log(x+" "+y);
+window.onkeydown = (e) => {
+    if(isGame) {
+        let key = e.key;
+        if(key === "ArrowDown") {
+            if(mp[x+1][y] === '0' || mp[x+1][y] === '1') {
+                if(mp[x+1][y] === "1") getCoin++;
+                mp[x][y] = '0';
+                x++;
+                mp[x][y] = '5';
+                drawMap();
+            }
+        }else if(key === "ArrowLeft") {
+            if(mp[x][y-1] === '0' || mp[x][y-1] === '1') {
+                if(mp[x][y-1] === "1") getCoin++;
+                mp[x][y] = '0';
+                y--;
+                mp[x][y] = '5';
+                drawMap();
+            }
+        }else if(key === "ArrowRight") {
+           if(mp[x][y+1] === '0' || mp[x][y+1] === '1') {
+               if(mp[x][y+1] === "1") getCoin++;
+                mp[x][y] = '0';
+                y++;
+                mp[x][y] = '5';
+                drawMap();
+            }
         }
-    }else if(key === "ArrowLeft") {
-        if(mp[x][y-1] === '0' || mp[x][y-1] === '1') {
-            if(mp[x][y-1] === "1") getCoin++;
-            mp[x][y] = '0';
-            y--;
-            mp[x][y] = '5';
-            drawMap();
-            console.log("함수실행");
-            console.log(x+" "+y);
+        if(x === length-2 && y === length - 2) {
+            document.querySelector('#screen').innerHTML += "<h1>끝</h1>";
+            isGame = false;
         }
-    }else if(key === "ArrowRight") {
-        if(mp[x][y+1] === '0' || mp[x][y+1] === '1') {
-            if(mp[x][y+1] === "1") getCoin++;
-            mp[x][y] = '0';
-            y++;
-            mp[x][y] = '5';
-            drawMap();
-            console.log("함수실행");
-            console.log(x+" "+y);
-        }
-    }
+    } 
 }

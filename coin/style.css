@@ -1,3 +1,9 @@
 #title, #Explanation, #screen {
     text-align: center;
 }
+#image {
+    height: 20px;
+    width: 20px;
+    border: 1px black solid;
+    margin: 1px;
+}
