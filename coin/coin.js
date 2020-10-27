@@ -34,45 +34,40 @@ for (let i = 0; i < split.length; i++) {
 let x = 1, y = 1;
 
 const getCell = (i, j) => {
-    let type = mp[i][j];
-    i = (i | 0) < 10 ? `0${i}` : i;
-    j = (j | 0) < 10 ? `0${j}` : j;
-    if (type === '9') return `<svg id="c${i}${j}" width="20px" height="20px"><rect x="0" y="0" width="20" height="20" fill="#000000"></rect></svg>`;
-    else if (type === '0') return `<svg id="c${i}${j}" width="20px" height="20px"><rect x="0" y="0" width="20" height="20" fill="#ffffff"></rect></svg>`;
-    else if (type === '1') return `<svg id="c${i}${j}" width="20px" height="20px"><rect x="0" y="0" width="20" height="20" fill="#ffff00"></rect></svg>`;
-    else if (type === '5') return `<svg id="c${i}${j}" width="20px" height="20px"><rect x="0" y="0" width="20" height="20" fill="#ff0000"></rect></svg>`;
-    else throw new Error("out of range");
+	let type = mp[i][j];
+	i = (i | 0) < 10 ? `0${i}` : i;
+	j = (j | 0) < 10 ? `0${j}` : j;
+	if (type === '9') return `<svg id="c${i}${j}" width="20px" height="20px"><rect x="0" y="0" width="20" height="20" fill="#000000"></rect></svg>`;
+	else if (type === '0') return `<svg id="c${i}${j}" width="20px" height="20px"><rect x="0" y="0" width="20" height="20" fill="#ffffff"></rect></svg>`;
+	else if (type === '1') return `<svg id="c${i}${j}" width="20px" height="20px"><rect x="0" y="0" width="20" height="20" fill="#ffff00"></rect></svg>`;
+	else if (type === '5') return `<svg id="c${i}${j}" width="20px" height="20px"><rect x="0" y="0" width="20" height="20" fill="#ff0000"></rect></svg>`;
+	else throw new Error("out of range");
 }
 
 const updateCell = (i, j) => {
-    let x = (i | 0) < 10 ? `0${i}` : i;
-    let y = (j | 0) < 10 ? `0${j}` : j;
+	let x = (i | 0) < 10 ? `0${i}` : i;
+	let y = (j | 0) < 10 ? `0${j}` : j;
 
-    document.querySelector(`#c${x}${y}`).outerHTML = getCell(i, j);
+	document.querySelector(`#c${x}${y}`).outerHTML = getCell(i, j);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    drawMap();
-});
-
-function drawMap() {    // 맵 화면에 그리기
-    let screen = document.querySelector("#screen");
-    screen.innerHTML = "";
+	let screen = document.querySelector("#screen");
+	screen.innerHTML = "";
 
 	for (let i = 0; i < length; i++) {
-	    let list = document.createElement('div');
+		let list = document.createElement('div');
 
 		for (let j = 0; j < length; j++) {
-		    list.innerHTML += getCell(i, j);
+			list.innerHTML += getCell(i, j);
 		}
 		screen.appendChild(list);
 	}
-}
+});
 
-window.onkeydown = (e) => {
+window.addEventListener('keydown', e => {
 	if (isGame) {
 		let key = e.key;
-		console.log(key);
 		if (key === "ArrowDown") {
 			if (mp[x + 1][y] === '0' || mp[x + 1][y] === '1') {
 				if (mp[x + 1][y] === "1") coinCount++;
@@ -80,31 +75,31 @@ window.onkeydown = (e) => {
 				updateCell(x, y);
 
 				mp[++x][y] = '5';
-                updateCell(x, y);
+				updateCell(x, y);
 			}
 		} else if (key === "ArrowLeft") {
 			if (mp[x][y - 1] === '0' || mp[x][y - 1] === '1') {
 				if (mp[x][y - 1] === "1") coinCount++;
 				mp[x][y] = '0';
-                updateCell(x, y);
+				updateCell(x, y);
 
 				mp[x][--y] = '5';
-                updateCell(x, y);
+				updateCell(x, y);
 			}
 		} else if (key === "ArrowRight") {
 			if (mp[x][y + 1] === '0' || mp[x][y + 1] === '1') {
 				if (mp[x][y + 1] === "1") coinCount++;
 				mp[x][y] = '0';
-                updateCell(x, y);
+				updateCell(x, y);
 
 				mp[x][++y] = '5';
-                updateCell(x, y);
+				updateCell(x, y);
 			}
 		}
-        document.querySelector("#score").innerHTML = `획득한 동전 수 : ${coinCount}`;
+		document.querySelector("#score").innerHTML = `획득한 동전 수 : ${coinCount}`;
 		if (x === length - 2 && y === length - 2) {
 			document.querySelector('#screen').innerHTML += "<h1>끝</h1>";
 			isGame = false;
 		}
 	}
-}
+});
