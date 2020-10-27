@@ -1,5 +1,22 @@
-let originalPermutation = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let shuffledPermutation = [9, 2, 3, 6, 8, 1, 5, 7, 10, 4];
+let shuffledPermutation = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const calc = async() => {
+	let res = (await axios.post(`${location.origin}/api/game/perm/diff`, JSON.stringify({
+		permutation: shuffledPermutation
+	}), {
+		json: true,
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	})).data;
+
+	if (res.status) {
+		alert("오류가 발생했습니다.\n개발자에게 알려주세요.");
+		return;
+	}
+
+	document.querySelector("#diff").innerHTML = res.result;
+};
 
 const swap = (a, b) => {
 	let t = shuffledPermutation[b];
@@ -7,15 +24,9 @@ const swap = (a, b) => {
 	shuffledPermutation[a] = t;
 };
 
-const calc = () => {
-	let ret = 0;
-	for (let i = 0; i < originalPermutation.length; i++) ret += Math.abs(originalPermutation[i] - shuffledPermutation[i]);
-	document.querySelector("#diff").innerHTML = ret.toString();
-};
-
 let prevClick = null;
 
-const onClick = btnIndex => () => {
+const onClick = btnIndex => async() => {
 	if (prevClick === null) {
 		prevClick = btnIndex;
 		document.querySelector(`#btn${btnIndex}`).classList.add('clicked');
@@ -24,7 +35,7 @@ const onClick = btnIndex => () => {
 		document.querySelector(`#btn${btnIndex}`).classList.remove('clicked');
 	} else {
 		swap(prevClick, btnIndex);
-		calc();
+		await calc();
 
 		document.querySelector(`#btn${prevClick}`).classList.remove('clicked');
 		prevClick = null;
