@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>비버즈 | 동전 줍기</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/coin/style.css">
+    <script src="/coin/coin.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div>
         <h1 id="title">동전 줍기</h1>
-        <h3 id="Explanation">초기에 플레이어는 왼쪽 윗칸에 있고, 오직 내려가거나 오른쪽, 왼쪽으로 이동하여 오른쪽 아랫칸에 도달해야 한다. 이 때, 줍는 동전을 최대화해야 한다</h3>
+        <h4 style="text-align: center;">내려가거나 오른쪽, 왼쪽으로만 이동하여 오른쪽 아랫칸에 도달해야 합니다.<br>도착 지점까지 동전을 최대한 많이 수집하세요!</h4>
     </div>
-    <div id="screen"></div>
-    <div id="score"></div>
-    <script src="/coin/coin.js"></script>
+    <div id="screen" style="width: 0; margin: 0 auto; border: 20px solid black;"></div>
+    <div id="score" style="text-align: center; margin-top: 30px;"></div>
+    <div id="info" style="display: none; text-align: center; margin-top: 30px;">
+        게임이 종료되었습니다. 아래 버튼을 눌러 제출해주세요.<br>
+        <button onclick="submit()">
+            제출하기
+        </button>
+    </div>
 </body>
 </html>
