@@ -1,6 +1,6 @@
 let shuffledPermutation = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const calc = async() => {
+const calc = async () => {
 	let res = (await axios.post(`${location.origin}/api/game/perm/diff`, JSON.stringify({
 		permutation: shuffledPermutation
 	}), {
@@ -26,7 +26,7 @@ const swap = (a, b) => {
 
 let prevClick = null;
 
-const onClick = btnIndex => async() => {
+const onClick = btnIndex => async () => {
 	if (prevClick === null) {
 		prevClick = btnIndex;
 		document.querySelector(`#btn${btnIndex}`).classList.add('clicked');
@@ -60,8 +60,10 @@ const write = () => {
 	}
 
 	calc();
-}
+};
 
 document.addEventListener("DOMContentLoaded", () => {
+	setTimeout(() => intro.marginLeft = `${after}px`, 500);
+	setTimeout(() => intro.margin = "0 auto", 1000);
 	write();
 });

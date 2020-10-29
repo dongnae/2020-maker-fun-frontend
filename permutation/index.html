@@ -1,33 +1,105 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>비버즈 | 수열 복원하기</title>
-    <link rel="stylesheet" href="/permutation/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>비버즈 | 수열 복원하기</title>
+	<link rel="stylesheet" href="/permutation/style.css">
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="/permutation/permutation.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="/permutation/permutation.js"></script>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">순열 복원하기</h1>
-        <article class="explain" style="margin-bottom: 80px;">
-            * 원래 순열(A)이 있고, 화면에 순열(B)가 주어집니다.<br>
-            * 순열 B를 순열 A로 만들어야 합니다.<br>
-            * 순열(Permutation) A의 (수열의 길이 N) 1 <= I <= N에 대하여 의 모든 값이 다름을 보장합니다.<br>
-        </article>
 
-        <hr style="width: 100%; margin-bottom: 60px;">
+<section class="title">
+	<p class="title-text">순열 복원하기</p>
+</section>
 
-        <div style="text-align: center; margin-bottom: 40px;">
-            <b>차잇값</b>
-            <div id="diff">
-            </div>
-        </div>
+<div style="height: 56px;"></div>
 
-        <div id="permutation">
-        </div>
-    </div>
+<section class="container">
+	<article class="intro" style="transition: .5s;">
+		<div class="quote-left">
+		</div>
+		수열 \( A \)가 있고, 화면에 나타나는 수열 \( B \)가 있습니다.<br>
+		여러분에게는 수열 A와 B의 원소값의 차이의 합, 즉 \( \sum_{i=1}^n |A_{i}-B_{i}| \) 이 주어집니다.<br>
+
+		이제 여러분은 아래 수열을 적절히 바꾸어 수열 A를 맞춰야 합니다.
+	</article>
+
+	<div class="box-list">
+		<div class="box">
+			<p class="num">1</p>
+		</div>
+		<div class="box">
+			<p class="num">2</p>
+		</div>
+		<div class="box">
+			<p class="num">3</p>
+		</div>
+		<div class="box">
+			<p class="num">4</p>
+		</div>
+		<div class="box">
+			<p class="num">5</p>
+		</div>
+		<div class="box">
+			<p class="num">6</p>
+		</div>
+		<div class="box">
+			<p class="num">7</p>
+		</div>
+		<div class="box">
+			<p class="num">8</p>
+		</div>
+		<div class="box">
+			<p class="num">9</p>
+		</div>
+		<div class="box">
+			<p class="num">10</p>
+		</div>
+	</div>
+
+	<div>
+		<div style="display: flex; justify-content: center; ">
+			<div style="position: relative; width: 83px;">
+				<div class="info-key">
+				</div>
+				<div class="info-key-text">
+					차이값
+				</div>
+
+				<div class="info-value">
+				</div>
+				<div class="info-value-text">
+					10
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- <div class="container">
+	<h1 class="title">순열 복원하기</h1>
+	<article class="explain" style="margin-bottom: 80px;">
+		* 원래 순열(A)이 있고, 화면에 순열(B)가 주어집니다.<br>
+		* 순열 B를 순열 A로 만들어야 합니다.<br>
+		* 순열(Permutation) A의 (수열의 길이 N) 1 <= I <= N에 대하여 의 모든 값이 다름을 보장합니다.<br>
+	</article>
+
+	<hr style="width: 100%; margin-bottom: 60px;">
+
+	<div style="text-align: center; margin-bottom: 40px;">
+		<b>차잇값</b>
+		<div id="diff">
+		</div>
+	</div>
+
+	<div id="permutation">
+	</div>
+</div> -->
 </body>
 </html>

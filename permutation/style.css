@@ -1,4 +1,174 @@
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'IBM Plex Sans KR Medium', serif;
+    color: black;
+}
+
+.title {
+    position: absolute;
+    width: 100%;
+    height: 56px;
+    left: 0;
+    top: 0;
+
+    /* 4dp */
+    filter: drop-shadow(0px 1.85px 6.25px rgba(0, 0, 0, 0.19));;
+
+    background-color: #00BCD4;
+
+    display: flex;
+    align-items: center;
+}
+
+.title-text {
+    width: 100%;
+
+    color: white;
+    font-size: 20px;
+
+    margin-left: 15px;
+}
+
 .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.intro {
+    position: relative;
+
+    text-align: center;
+
+    padding-left: 20px;
+    border-radius: 2px;
+
+    margin: 20px auto 0;
+}
+
+.quote-left {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    border-radius: 3px;
+    background: #00BCD4;
+
+    opacity: .2;
+}
+
+.box-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    margin: 60px auto 0;
+
+    width: 100%;
+    max-width: 600px;
+
+    flex: 1;
+
+    box-shadow: 0px 0.5px 1.75px rgba(0, 0, 0, 0.039), 0px 1.85px 6.25px rgba(0, 0, 0, 0.19);
+}
+
+.box {
+    position: relative;
+    padding-top: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+
+    /*width: 40px;
+    height: 40px;*/
+
+    border: 0.5px solid rgba(0, 188, 212, .5);
+    box-sizing: border-box;
+}
+
+.num {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 1;
+    font-weight: bold;
+    color: #00BCD4;
+
+    font-size: 1.3vw;
+}
+
+.info-key {
+    width: 47px;
+    height: 0;
+    border: 18px #00BCD4 solid;
+    border-radius: 18px;
+    background-color: #00BCD4;
+    opacity: .12;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.info-value {
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    display: block;
+    content: '';
+
+    width: 0;
+    height: 0;
+
+    border: 18px #00BCD4 solid;
+    border-radius: 18px;
+    background-color: #00BCD4;
+    opacity: .24;
+
+    position: absolute;
+}
+
+.info-key-text {
+    display: inline;
+    font-size: 1px;
+
+    position: absolute;
+    top: 10px;
+    left: 12px;
+}
+
+.info-value-text {
+    display: inline;
+    font-size: 1px;
+
+    position: absolute;
+    top: 10px;
+    left: 59px;
+}
+
+/*.container {
     width: 80%;
     margin: 0 auto;
 }
@@ -31,4 +201,4 @@
 
 .clicked {
     border: 4px red solid;
-}
+}*/
