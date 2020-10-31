@@ -18,99 +18,88 @@
 	<p class="title-text">순열 복원하기</p>
 </section>
 
-<!--<div style="height: 56px;"></div>-->
+<div style="height: 112px;"></div>
 
 <section class="container">
-	<article class="intro" style="transition: .5s;">
+	<article class="intro" style="transition: .5s; max-width: 1000px;">
 		<div class="quote-left">
 		</div>
 		수열 \( A \)가 있고, 화면에 나타나는 수열 \( B \)가 있습니다.<br>
-		여러분에게는 수열 A와 B의 원소값의 차이의 합, 즉 \( \sum_{i=1}^n |A_{i}-B_{i}| \) 이 주어집니다.<br>
+		여러분에게는 수열 A와 B의 원소값의 차이의 합, 즉 \( \sum_{i=1}^n |A_{i}-B_{i}| \) 이 주어집니다.<br><br>
 
 		이제 여러분은 아래 수열을 적절히 바꾸어 수열 A를 맞춰야 합니다.
 	</article>
 
-	<div class="box-list">
-		<div class="box">
-			<p class="num">1</p>
-		</div>
-		<div class="box">
-			<p class="num">2</p>
-		</div>
-		<div class="box">
-			<p class="num">3</p>
-		</div>
-		<div class="box">
-			<p class="num">4</p>
-		</div>
-		<div class="box">
-			<p class="num">5</p>
-		</div>
-		<div class="box">
-			<p class="num">6</p>
-		</div>
-		<div class="box">
-			<p class="num">7</p>
-		</div>
-		<div class="box">
-			<p class="num">8</p>
-		</div>
-		<div class="box">
-			<p class="num">9</p>
-		</div>
-		<div class="box">
-			<p class="num">10</p>
-		</div>
-	</div>
-
-	<!--<div>
-		<div style="display: flex; justify-content: center; ">
-			<div style="position: relative; width: 83px;">
-				<div class="info-key">
-				</div>
-				<div class="info-key-text">
-					차이값
-				</div>
-
-				<div class="info-value">
-				</div>
-				<div class="info-value-text">
-					10
-				</div>
+	<div style="display: flex; justify-content: center; flex-direction: column;">
+		<div class="box-list">
+			<div class="box">
+				<p class="num">1</p>
+			</div>
+			<div class="box">
+				<p class="num">2</p>
+			</div>
+			<div class="box">
+				<p class="num">3</p>
+			</div>
+			<div class="box">
+				<p class="num">4</p>
+			</div>
+			<div class="box">
+				<p class="num">5</p>
+			</div>
+			<div class="box">
+				<p class="num">6</p>
+			</div>
+			<div class="box">
+				<p class="num">7</p>
+			</div>
+			<div class="box">
+				<p class="num">8</p>
+			</div>
+			<div class="box">
+				<p class="num">9</p>
+			</div>
+			<div class="box">
+				<p class="num">10</p>
 			</div>
 		</div>
-	</div>-->
 
-	<div style="display: flex; justify-content: space-evenly; max-width: 600px; margin: 20px auto 0; width: 100%;">
-		<div style="display: flex; flex: 1; justify-content: flex-start;">
-			<div style="display: flex; justify-content: center; align-items: center; width: 85px; height: 30px; border-radius: 30px; background: rgba(0, 188, 212, .12); margin-right: 10px;">
-				<span style="color: #00BCD4; font-size: 3px; flex: 1; text-align: center; margin-left: 4px;">
-					차이값
-				</span>
-				<div style="display: flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 30px; background: rgba(0, 188, 212, .12);">
-					<span style="color: #00BCD4; font-size: 3px;">
+		<div class="bottom-info">
+			<div class="circle-list">
+				<div class="circle-bg">
+					<span class="circle-text">
+						차이값
+					</span>
+					<div class="circle-value-bg">
+					<span class="circle-value-text">
 						10
 					</span>
+					</div>
 				</div>
-			</div>
-			<div style="display: flex; justify-content: center; align-items: center; width: 85px; height: 30px; border-radius: 30px; background: rgba(0, 188, 212, .12);">
-				<span style="color: #00BCD4; font-size: 3px; flex: 1; text-align: center; margin-left: 4px;">
-					이동 횟수
-				</span>
-				<div style="display: flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 30px; background: rgba(0, 188, 212, .12);">
-					<span style="color: #00BCD4; font-size: 3px;">
+				<div class="circle-bg">
+					<span class="circle-text">
+						이동 횟수
+					</span>
+					<div class="circle-value-bg">
+					<span class="circle-value-text">
 						1
 					</span>
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<div style="display: flex; align-items: center; width: 70px; justify-content: center; border: 1px solid #00BCD4; color: #00BCD4; box-sizing: border-box; border-radius: 2px; font-size: 15px;">
-			제출
+			<div class="submit-btn">
+				제출
+			</div>
 		</div>
 	</div>
 
 </section>
+
+<a style="color: lightslategray; position: fixed; bottom: 10px; left: 0; right: 0; font-size: 1px; text-align: center; text-decoration: none;"
+   href="https://twitter.greenstar.me">
+	Designed by @Greenstar1151
+</a>
 
 <!-- <div class="container">
 	<h1 class="title">순열 복원하기</h1>

@@ -62,8 +62,13 @@ const write = () => {
 	calc();
 };
 
+const setContainerSize = () => {
+	document.querySelector(".container").style.height = (window.innerHeight - parseInt(getComputedStyle(document.querySelector(".title").nextElementSibling).height)) + "px";
+};
+
+window.addEventListener('resize', () => setContainerSize());
+
 document.addEventListener("DOMContentLoaded", () => {
-	setTimeout(() => intro.marginLeft = `${after}px`, 500);
-	setTimeout(() => intro.margin = "0 auto", 1000);
-	write();
+	setContainerSize();
+	//write();
 });
