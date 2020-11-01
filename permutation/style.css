@@ -15,6 +15,10 @@ html, head, body {
     color: black;
 }
 
+*::selection {
+    background-color: rgba(0, 188, 212, .2);
+}
+
 .title {
     position: absolute;
     width: 100%;
@@ -40,6 +44,10 @@ html, head, body {
     margin-left: 25px;
 }
 
+.title-text::selection {
+    background-color: rgba(0, 188, 212, 1);
+}
+
 .container {
     display: flex;
     justify-content: space-evenly;
@@ -59,7 +67,9 @@ html, head, body {
     padding-left: 20px;
     border-radius: 2px;
 
-    margin: 0px auto 0;
+    margin: 0 auto 0;
+
+    max-width: 1000px;
 
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
@@ -79,6 +89,12 @@ html, head, body {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
     opacity: .2;
+}
+
+.game-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .box-list {
@@ -127,6 +143,10 @@ html, head, body {
     color: #00BCD4;
 
     font-size: 42px;
+}
+
+.clicked {
+    border: 5px solid rgba(0, 188, 212, .5);
 }
 
 .bottom-info {
@@ -192,6 +212,13 @@ html, head, body {
     font-size: 20px;
 }
 
+.active {
+    border-color: #00BCD4;
+    color: #00BCD4;
+
+    cursor: pointer;
+}
+
 @media (max-width: 950px) {
     .title {
         height: 60px;
@@ -207,7 +234,7 @@ html, head, body {
     }
 
     .intro {
-        font-size: 18px;
+        font-size: 15px;
         filter: none;
     }
 
@@ -225,7 +252,7 @@ html, head, body {
         border-radius: 30px;
     }
 
-    .circle-text,.circle-value-text {
+    .circle-text, .circle-value-text {
         font-size: 10px;
     }
 
@@ -238,10 +265,5 @@ html, head, body {
     .submit-btn {
         width: 80px;
         font-size: 15px;
-    }
-
-    .active {
-        border-color: #00BCD4;
-        color: #00BCD4;
     }
 }

@@ -11,6 +11,15 @@
 
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<script>
+		MathJax = {
+			options: {
+				renderActions: {
+					addMenu: []
+				}
+			}
+		};
+	</script>
 </head>
 <body>
 
@@ -21,7 +30,7 @@
 <div style="height: 112px;"></div>
 
 <section class="container">
-	<article class="intro" style="transition: .5s; max-width: 1000px;">
+	<article class="intro">
 		<div class="quote-left">
 		</div>
 		수열 \( A \)가 있고, 화면에 나타나는 수열 \( B \)가 있습니다.<br>
@@ -30,8 +39,8 @@
 		이제 여러분은 아래 수열을 적절히 바꾸어 수열 A를 맞춰야 합니다.
 	</article>
 
-	<div style="display: flex; justify-content: center; flex-direction: column;">
-		<div class="box-list">
+	<div class="game-box">
+		<div class="box-list" id="permutation">
 			<div class="box">
 				<p class="num">1</p>
 			</div>
@@ -71,8 +80,8 @@
 						차이값
 					</span>
 					<div class="circle-value-bg">
-					<span class="circle-value-text">
-						10
+					<span class="circle-value-text" id="diff">
+
 					</span>
 					</div>
 				</div>
@@ -81,14 +90,14 @@
 						이동 횟수
 					</span>
 					<div class="circle-value-bg">
-					<span class="circle-value-text">
-						1
+					<span class="circle-value-text" id="move">
+
 					</span>
 					</div>
 				</div>
 			</div>
 
-			<div class="submit-btn">
+			<div class="submit-btn" onclick="submit();">
 				제출
 			</div>
 		</div>
