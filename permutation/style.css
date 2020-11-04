@@ -125,6 +125,8 @@ html, head, body {
 
     border: 0.5px solid rgba(0, 188, 212, .5);
     box-sizing: border-box;
+
+    cursor: pointer;
 }
 
 .num {
