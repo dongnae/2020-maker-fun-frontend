@@ -1,0 +1,28 @@
+#view{
+    position: absolute;
+    height: 80vh;
+    width: 30vw;
+    top: 5vh;
+    left: 35vw;
+}
+#selectRank{
+    height: 10%;
+    width: 100%;
+}
+#board{
+    text-align: center;
+    font-size: 200%;
+    height: 90%;
+    width: 100%;
+    border: black 1px solid;
+}
+#table{
+    text-align: center;
+    font-size: 200%;
+    height: 90%;
+    width: 100%;
+    border: black 1px solid;
+}
+#btn{
+    height: 100%;
+}
