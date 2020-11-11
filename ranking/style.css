@@ -1,11 +1,11 @@
-#view{
+.view{
     position: absolute;
     height: 80vh;
     width: 30vw;
     top: 5vh;
     left: 35vw;
 }
-#selectRank{
+.selectRank{
     height: 10%;
     width: 100%;
 }
