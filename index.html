@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>비버즈</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="/assets/notion.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css" rel="stylesheet">
+	<link href="/favicon.ico" rel="icon">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jsrsasign/8.0.20/jsrsasign-all-min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+	<style>
+        @font-face {
+            font-family: 'IBMPlexSansKR-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        html, head, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            font-family: 'IBM Plex Sans KR Medium', serif;
+            color: black;
+        }
+
+        *::selection {
+            background-color: rgba(0, 188, 212, .2);
+        }
+
+        header {
+            height: 106px;
+            width: 100%;
+            background-color: #00BCD4;
+            box-shadow: 4px 1px 10px 1px rgba(0, 0, 0, 0.25);
+        }
+
+        .container {
+            margin: 0 auto;
+            width: 90%;
+            max-width: 500px;
+	        display: flex;
+	        flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            width: 186px;
+            height: 106px;
+
+            font-size: 36px;
+            line-height: 54px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+
+            color: #FFFFFF;
+        }
+
+        .naver {
+	        height: 45px;
+            margin: 0 auto;
+        }
+
+        .btn-group {
+            margin-top: 50px;
+
+            display: flex;
+            justify-content: space-around;
+        }
+
+        @media (max-width: 800px) {
+	        .btn-group {
+		        flex-direction: column;
+		        justify-content: space-around;
+		        align-items: center;
+	        }
+        }
+
+        .btn {
+            border-radius: 5px;
+            width: 150px;
+            height: 45px;
+            background-color: rgba(0, 0, 0, 0);
+
+	        display: flex;
+	        align-items: center;
+	        justify-content: center;
+
+            border: 1px solid rgba(0, 0, 0, .5);
+            color: rgba(0, 0, 0, .5);
+
+            cursor: pointer;
+
+            transition: .5s;
+            font-size: 16px;
+
+	        text-decoration: none;
+	        margin-right: 20px;
+	        margin-bottom: 20px;
+        }
+
+        .btn:hover {
+            border: 1px solid #00BCD4;
+            color: #00BCD4;
+        }
+
+        .scroll-btn {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            display: flex;
+            border: 1px solid #000000;
+            border-radius: 80px;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+
+	        cursor: pointer;
+
+	        transition: .5s;
+        }
+
+        .scroll-btn-text {
+            transition: .5s;
+            color: #000000;
+            font-size: 40px;
+        }
+
+        .scroll-btn:hover {
+            border: 1px solid #00BCD4;
+        }
+
+        .scroll-btn:hover .scroll-btn-text {
+            color: #00BCD4;
+        }
+	</style>
+</head>
+<body>
+<div style="height: 100vh; display: flex; flex-direction: column; position: relative;">
+	<header style="display: flex; justify-content: space-between">
+		<div class="title">비버즈</div>
+		<div id="email" style="display: flex; align-items: center; color: white;"></div>
+	</header>
+	<div class="container" style="flex: 1;">
+		<a href="/auth/login/" id="auth"><img class="naver" src="/assets/login_with_naver.PNG" alt="네이버 로그인"></a>
+		<div class="btn-group">
+			<a class="btn" href="/coin/">동전 줍기 (Easy)</a>
+			<a class="btn" href="/permutation/">순열 복원 (Hard)</a>
+			<a class="btn" href="/ranking/">랭킹</a>
+		</div>
+	</div>
+
+	<a class="scroll-btn" href="#intro">
+		<span class="mdi mdi-arrow-down scroll-btn-text"></span>
+	</a>
+</div>
+<hr>
+<div style="width: 90%; margin: 0 auto; padding-top: 40px;" id="intro">
+	<article id="0c0a33b1-24b2-4805-b1ae-e8f241ba631d" class="page sans">
+		<h1 class="page-title">프로젝트 소개</h1>
+		<div class="page-body"><h2 id="5e30fc12-bbf1-4146-8288-d806488bcf88" class="">인원 소개</h2>
+			<p id="c9996405-3e5d-44f4-b086-4f022a77c5f9" class="">박찬솔, 전무강, 한대희</p>
+			<h2 id="863be47d-745c-4264-8188-80ec0ee3706b" class="">팀명</h2>
+			<p id="05f28dd1-fcb1-4b26-9e35-0ff8a44537e6" class="">Organic</p>
+			<h2 id="4bb86163-98f3-4b34-b5fb-a543a811b780" class="">작품명</h2>
+			<p id="76a9ac24-2dbc-40df-bdd1-ae212d094328" class="">비버즈</p>
+			<hr id="149b8559-493f-491c-b0a9-d51e9e9fa5b7"/>
+			<h2 id="768b1bd1-0b01-485d-b3cd-fd225f1e5d5d" class="">제작에 사용된 재료, 프로그램</h2>
+			<ul id="6e4c3305-504d-424c-b94d-0cd5b384f425" class="bulleted-list">
+				<li>IDE : IntelliJ IDEA Ultimate, CLion, Visual Studio Code</li>
+			</ul>
+			<ul id="6a99ab37-7fc2-4250-a0e3-649f7b108b35" class="bulleted-list">
+				<li>Language: Node.js v15 (Backend)</li>
+			</ul>
+			<ul id="b5433a34-8daf-4371-a7a4-e3166675bcc1" class="bulleted-list">
+				<li>Server hosted by Raspberry Pi4 8GB</li>
+			</ul>
+			<hr id="7bb0c75c-2612-4de9-a69d-515f93918dd8"/>
+			<h2 id="183f644f-3d9e-4af0-bebb-ee77a5e91706" class="">만드는 과정</h2>
+			<figure id="4bd5e960-7ca0-4a57-8992-4a133070d35e" class="image">
+				<a
+						href="/assets/Untitled.png"><img
+						style="width: 100%;"
+						src="/assets//Untitled.png"/></a>
+				<figcaption>Frontend Github History [<a href="https://github.com/dongnae/2020-maker-fun-frontend"
+				                                        target="_blank">dongnae/2020-maker-fun-frontend</a>]
+				</figcaption>
+			</figure>
+			<figure id="598e6c98-e2c7-4765-ad86-5fc0e045c3b9" class="image">
+				<a
+						href="/assets/Untitled%201.png"><img
+						style="width: 100%;"
+						src="/assets//Untitled%201.png"/></a>
+				<figcaption>Backend Develop Status</figcaption>
+			</figure>
+			<hr id="301e17b6-f11b-4024-a808-fc313a965044"/>
+			<h2 id="e8de7be1-4980-41a7-b0a6-6eff6c04a89a" class="">작품 작동 원리</h2>
+			<p id="6802fa94-65e1-48a7-b8f2-1316e066aa09" class="">Frontend에서 Backend의 RestFul API를 사용하여 게임 데이터를 수정하거나
+				가져오는 방식으로 작동함.</p>
+			<hr id="fa891bc9-99a3-4e6e-b1f6-8c1661244988"/>
+			<h2 id="595def2c-0032-4cf7-bce9-7da626ebc4a5" class="">후기</h2>
+			<p id="6b312715-cba6-40d4-b236-e9f433656269" class="">Production Server 였기 때문에 구현을 주의 깊게 했다.</p></div>
+	</article>
+</div>
+
+<script>
+	let e = document.getElementById('email');
+	let jwt = Cookies.get('token');
+	let parsed = JSON.parse(atob(jwt.split(".")[1]))['email'];
+	e.innerText = `Loggined as ${parsed}`;
+
+	e = document.getElementById('auth');
+	e.outerHTML = `<a class="btn" href="/auth/logout/">로그아웃</a>`;
+</script>
+</body>
+</html>
