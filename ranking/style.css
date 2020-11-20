@@ -1,9 +1,6 @@
 .view{
-    position: absolute;
-    height: 80vh;
-    width: 30vw;
-    top: 5vh;
-    left: 35vw;
+    width: 80%;
+    margin: 0 auto;
 }
 .selectRank{
     height: 10%;
