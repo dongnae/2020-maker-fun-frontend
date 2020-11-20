@@ -25,7 +25,7 @@ btn1 = function () {
 	let t = document.getElementById('table');
 	for (let i = 0; i < ret.length; i++) {
 		let row = `<tr>
-                   <td>${ret[i].name}</td>
+                   <td>${ret[i].email}</td>
                    <td>${ret[i].permutation === 999999999999999 ? "-" : ret[i].permutation}</td>
                    <td>${ret[i].coin}</td>
                    </tr>`;
@@ -47,7 +47,7 @@ btn2 = function () {
 	let t = document.getElementById('table');
 	for (let i = 0; i < ret.length; i++) {
 		let row = `<tr>
-                   <td>${ret[i].name}</td>
+                   <td>${ret[i].email}</td>
                    <td>${ret[i].coin}</td>
                    </tr>`;
 		t.innerHTML += row;
@@ -68,7 +68,7 @@ btn3 = function () {
 	let t = document.getElementById('table');
 	for (let i = 0; i < ret.length; i++) {
 		let row = `<tr>
-                   <td>${ret[i].name}</td>
+                   <td>${ret[i].email}</td>
                    <td>${ret[i].permutation === 999999999999999 ? "-" : ret[i].permutation}</td>
                    </tr>`;
 		t.innerHTML += row;
